@@ -40,16 +40,10 @@ public class Menu {
 
     public static void addNewToy(ToyStore store, Scanner scanner) {
         int toyType = promptInt(scanner, "Выберите тип игрушки (1 - пластиковая, 2 - резиновая, 3 - мягкая):",
-                (n) -> {
-                    return n >= 1 && n <= 3;
-                });
+                (n) -> n >= 1 && n <= 3);
         String name = promptString(scanner, "Название игрушки: ");
-        int quantity = promptInt(scanner, "Количество: ", (n) -> {
-            return n >= 0;
-        });
-        int weight = promptInt(scanner, "Вес игрушки: ", (n) -> {
-            return n > 0;
-        });
+        int quantity = promptInt(scanner, "Количество: ", (n) -> n >= 0);
+        int weight = promptInt(scanner, "Вес игрушки: ", (n) -> n > 0);
         switch (toyType) {
             case 1 -> store.addToy(new PlasticToy(name, quantity, weight));
             case 2 -> store.addToy(new RubberToy(name, quantity, weight));

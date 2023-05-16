@@ -1,7 +1,7 @@
 public abstract class Toy {
-    private int id;
+    private final int id;
     private static int count = 0;
-    private String name;
+    private final String name;
     private int quantity;
     private int weight;
     private String material;

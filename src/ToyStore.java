@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ToyStore {
-    private List<Toy> toys = new ArrayList<>();
-    private DrawToy drawToy = new DrawToy();
+    private final List<Toy> toys = new ArrayList<>();
+    private final DrawToy drawToy = new DrawToy();
 
     public ToyStore() {
     }
@@ -59,7 +59,7 @@ public class ToyStore {
     }
 
     public void increaseToyQuantity(int toyId, int quantityToAdd) {
-        Iterator var3 = this.toys.iterator();
+        Iterator<Toy> var3 = this.toys.iterator();
 
         Toy toy;
         do {
